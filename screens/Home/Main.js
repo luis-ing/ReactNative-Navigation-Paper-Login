@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet, StatusBar, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, SafeAreaView, TouchableHighlight, StatusBarStyle } from 'react-native';
 import { useTheme, Button, Switch, Card, Title, Paragraph } from 'react-native-paper';
 import { StackActions } from '@react-navigation/native';
 import { AuthContext } from '../../context/AuthContext';
@@ -19,9 +19,9 @@ const Main = ({ navigation, extraData }) => {
     }
 
     return (
-        <View style={{ backgroundColor: theme.colors.background, height: '100%', width: '100%' }}>
+        <SafeAreaView style={{ backgroundColor: theme.colors.background, height: '100%', width: '100%' }}>
             <View style={styles.container}>
-                <Card style={{ marginTop: 15, paddingTop: '10%', paddingBottom: '5%' }} mode="elevated">
+                <Card style={{ marginTop: 15, paddingTop: '10%', paddingBottom: '5%' }} mode="contained">
                     <Card.Cover style={{ width: 60, height: 60, alignSelf: 'center' }} source={{ uri: 'https://cdn-icons-png.flaticon.com/128/2476/2476980.png' }} />
                     <Card.Content>
                         <Title style={{ textAlign: 'center' }}>Start Documentation</Title>
@@ -43,14 +43,13 @@ const Main = ({ navigation, extraData }) => {
                     Logout
                 </Button>
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: StatusBar.currentHeight <= 30 ? StatusBar.currentHeight + 10 : 70 - 20,
         paddingHorizontal: 15,
     },
 });

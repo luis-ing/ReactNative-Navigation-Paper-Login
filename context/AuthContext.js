@@ -5,9 +5,9 @@ const AuthSesion = async () => {
     try {
         // await AsyncStorage.setItem('@session', 'false');
         const sesion = await AsyncStorage.getItem('@session');
-        if (sesion == null) {
-            await AsyncStorage.setItem('@session', false);
-        }
+        // if (sesion == null) {
+        //     await AsyncStorage.setItem('@session', false);
+        // }
 
         // const ActualSession = await AsyncStorage.getItem('@session');
         // console.log("ActualSession ", ActualSession);
@@ -47,11 +47,11 @@ const AuthContextProvider = ({ children }) => {
         if (sesion == "LOGIN") {
             setAuth(true);
             // await AsyncStorage.setItem('@session:key', 'true');
-            await AsyncStorage.setItem('@session', 'true');
+            // await AsyncStorage.setItem('@session', 'true');
         } else {
             setAuth(false);
             // await AsyncStorage.setItem('@session:key', 'false');
-            await AsyncStorage.setItem('@session', 'false');
+            // await AsyncStorage.setItem('@session', 'false');
         }
 
         if (sesion == "LOGIN") {
@@ -67,7 +67,11 @@ const AuthContextProvider = ({ children }) => {
     console.log("Sesion depues de cambiar: ", Auth, typeof Auth)
 
     const data = { Auth, AutomaticAuth, startClosesesion };
-    return (<AuthContext.Provider value={data}>{children}</AuthContext.Provider>);
+    return (
+        <AuthContext.Provider value={data}>
+            {children}
+        </AuthContext.Provider>
+    );
 }
 
 export { AuthContext };

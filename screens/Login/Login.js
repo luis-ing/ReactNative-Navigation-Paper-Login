@@ -1,10 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useForm, Controller } from "react-hook-form";
-import { StyleSheet, StatusBar, View } from 'react-native';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import { Text, TextInput, Button, useTheme, withTheme, List } from 'react-native-paper';
 import { StackActions } from '@react-navigation/native';
 import { AuthContext } from '../../context/AuthContext';
-
 
 const Login = ({ navigation }) => {
     const theme = useTheme();
@@ -36,9 +35,9 @@ const Login = ({ navigation }) => {
             console.log("Error: ", e);
         }
     };
-    // console.log(errors)
+
     return (
-        <View style={{ backgroundColor: theme.colors.background, height: '100%', width: '100%' }}>
+        <SafeAreaView style={{ backgroundColor: theme.colors.background, height: '100%', width: '100%' }}>
             <View style={styles.container}>
                 <View style={styles.head}>
                     <List.Image variant="image" source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' }} />
@@ -88,24 +87,17 @@ const Login = ({ navigation }) => {
                     >
                         {textLogin.title}
                     </Button>)}
-
                 </View>
             </View>
-        </View >
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: StatusBar.currentHeight <= 30 ? StatusBar.currentHeight + 10 : 70 - 20,
         paddingHorizontal: 15,
         justifyContent: 'center',
-    },
-    imgCenter: {
-        alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 10
     },
     textCenter: {
         textAlign: 'center'

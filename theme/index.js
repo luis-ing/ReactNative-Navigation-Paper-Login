@@ -7,7 +7,7 @@ export const themeLigth = {
     myOwnProperty: true,
     // Specify custom property in nested object
     colors: {
-        primary: 'rgb(52, 61, 255)',
+        primary: 'rgb(0, 0, 0)',
         onPrimary: 'rgb(255, 255, 255)',
         primaryContainer: 'rgb(224, 224, 255)',
         onPrimaryContainer: 'rgb(0, 0, 110)',
@@ -58,8 +58,8 @@ export const themeDark = {
     // Specify custom property in nested object
     colors: {
         // primary: 'rgb(190, 194, 255)',
-        primary: 'rgb(94, 119, 212)',
-        onPrimary: 'rgb(0, 1, 172)',
+        primary: 'rgb(240, 240, 240)',
+        onPrimary: 'rgb(0, 0, 0)',
         primaryContainer: 'rgb(0, 0, 239)',
         onPrimaryContainer: 'rgb(224, 224, 255)',
         secondary: 'rgb(197, 196, 221)',
@@ -74,7 +74,7 @@ export const themeDark = {
         onError: 'rgb(105, 0, 5)',
         errorContainer: 'rgb(147, 0, 10)',
         onErrorContainer: 'rgb(255, 180, 171)',
-        background: 'rgb(27, 27, 31)',
+        background: 'rgb(0, 0, 0)',
         onBackground: 'rgb(229, 225, 230)',
         surface: 'rgb(27, 27, 31)',
         onSurface: 'rgb(229, 225, 230)',
