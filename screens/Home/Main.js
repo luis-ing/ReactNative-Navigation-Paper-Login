@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { StyleSheet, View, SafeAreaView, TouchableHighlight, StatusBarStyle } from 'react-native';
-import { useTheme, Button, Switch, Card, Title, Paragraph } from 'react-native-paper';
+import { StyleSheet, View, SafeAreaView, Platform } from 'react-native';
+import { useTheme, Button, Switch, Card, Title, Paragraph, Appbar, Avatar, Text, SegmentedButtons } from 'react-native-paper';
 import { StackActions } from '@react-navigation/native';
 import { AuthContext } from '../../context/AuthContext';
 import listContainer from './content/list.container';
@@ -21,25 +21,36 @@ const Main = ({ navigation, extraData }) => {
     return (
         <SafeAreaView style={{ backgroundColor: theme.colors.background, height: '100%', width: '100%' }}>
             <View style={styles.container}>
-                <Card style={{ marginTop: 15, paddingTop: '10%', paddingBottom: '5%' }} mode="contained">
-                    <Card.Cover style={{ width: 60, height: 60, alignSelf: 'center' }} source={{ uri: 'https://cdn-icons-png.flaticon.com/128/2476/2476980.png' }} />
-                    <Card.Content>
-                        <Title style={{ textAlign: 'center' }}>Start Documentation</Title>
-                        <Paragraph style={{ textAlign: 'center' }}>Input or Paste your text!</Paragraph>
-                    </Card.Content>
-                    <Card.Actions style={{ alignSelf: 'center' }}>
-                        <Button
-                            mode="contained"
-                        >
-                            Hola
-                        </Button>
-                    </Card.Actions>
-                </Card>
+                <Appbar.Header style={{ backgroundColor: theme.colors.background }} elevated={0} mode="center-aligned">
+                    {/* <Avatar.Image size={45} source={require('../../assets/img_perfil1.jpg')}
+                        onTouchEnd={() => console.log('Hooola')} /> */}
+                    <Appbar.Content title="Predeterminado" subtitle={'Subtitle'} />
+                    <Appbar.Action icon="plus" onPress={() => { }} />
+                </Appbar.Header>
+                <View style={{ alignItems: 'center' }}>
+                    <SegmentedButtons
+                        buttons={[
+                            {
+                                value: 'walk',
+                                label: 'Dia',
+                            },
+                            {
+                                value: 'train',
+                                label: 'Semana',
+                            },
+                            {
+                                value: 'drive',
+                                label: 'Mes'
+                            },
+                            {
+                                value: 'anio',
+                                label: 'Año'
+                            },
+                        ]}
+                    />
+                </View>
                 <Switch value={DarkTheme} onValueChange={onToggleSwitch} />
-                <Button
-                    mode="contained"
-                    onPress={Logout}
-                >
+                <Button mode="contained" onPress={Logout}>
                     Logout
                 </Button>
             </View>

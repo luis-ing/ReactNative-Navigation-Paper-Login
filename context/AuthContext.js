@@ -36,9 +36,10 @@ const AuthContextProvider = ({ children }) => {
 
         if (data) {
             console.log("Redireccionamiento a Main");
-            navigation.dispatch(
-                StackActions.replace('Main')
-            );
+            // navigation.dispatch(
+            //     StackActions.replace('Main')
+            // );
+            navigation.navigate('Home');
         }
     }
 
@@ -55,9 +56,10 @@ const AuthContextProvider = ({ children }) => {
         }
 
         if (sesion == "LOGIN") {
-            navigation.dispatch(
-                StackActions.replace('Main')
-            );
+            // navigation.dispatch(
+            //     StackActions.replace('Main')
+            // );
+            navigation.navigate('Home');
         } else {
             navigation.dispatch(
                 StackActions.replace('Login')
