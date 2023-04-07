@@ -34,13 +34,13 @@ const AuthContextProvider = ({ children }) => {
         const data = Boolean(await AuthSesion());
         console.log("Sesion de storage ", data, typeof data);
 
-        if (data) {
-            console.log("Redireccionamiento a Main");
+        // if (data) {
+            // console.log("Redireccionamiento a Main");
             // navigation.dispatch(
             //     StackActions.replace('Main')
             // );
-            navigation.navigate('Home');
-        }
+            // navigation.navigate('Home');
+        // }
     }
 
     const startClosesesion = async (navigation, StackActions, sesion) => {
@@ -56,10 +56,10 @@ const AuthContextProvider = ({ children }) => {
         }
 
         if (sesion == "LOGIN") {
-            // navigation.dispatch(
-            //     StackActions.replace('Main')
-            // );
-            navigation.navigate('Home');
+            navigation.dispatch(
+                StackActions.replace('Home')
+            );
+            // navigation.navigate('Home');
         } else {
             navigation.dispatch(
                 StackActions.replace('Login')

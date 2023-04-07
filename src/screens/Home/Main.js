@@ -5,9 +5,8 @@ import { StackActions } from '@react-navigation/native';
 import { AuthContext } from '../../context/AuthContext';
 import listContainer from './content/list.container';
 
-const Main = ({ navigation, extraData }) => {
+const Main = ({ navigation, extraData: { DarkTheme, changeTheme } }) => {
     const theme = useTheme();
-    const { DarkTheme, changeTheme } = extraData;
     const RespondAuthContext = useContext(AuthContext);
 
     const Logout = () => {
