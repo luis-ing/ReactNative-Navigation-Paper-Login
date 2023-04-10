@@ -35,11 +35,11 @@ const AuthContextProvider = ({ children }) => {
         console.log("Sesion de storage ", data, typeof data);
 
         // if (data) {
-            // console.log("Redireccionamiento a Main");
-            // navigation.dispatch(
-            //     StackActions.replace('Main')
-            // );
-            // navigation.navigate('Home');
+        // console.log("Redireccionamiento a Main");
+        // navigation.dispatch(
+        //     StackActions.replace('Main')
+        // );
+        // navigation.navigate('Home');
         // }
     }
 
@@ -64,6 +64,7 @@ const AuthContextProvider = ({ children }) => {
             navigation.dispatch(
                 StackActions.replace('Login')
             );
+            // navigation.navigate('Login');
         }
     }
     console.log("Sesion depues de cambiar: ", Auth, typeof Auth)

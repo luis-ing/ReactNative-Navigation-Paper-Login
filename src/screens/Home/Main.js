@@ -20,13 +20,13 @@ const Main = ({ navigation, extraData: { DarkTheme, changeTheme } }) => {
     return (
         <SafeAreaView style={{ backgroundColor: theme.colors.background, height: '100%', width: '100%' }}>
             <View style={styles.container}>
-                <Appbar.Header style={{ backgroundColor: theme.colors.background }} elevated={0} mode="center-aligned">
-                    {/* <Avatar.Image size={45} source={require('../../assets/img_perfil1.jpg')}
-                        onTouchEnd={() => console.log('Hooola')} /> */}
+                {/* <Appbar.Header style={{ backgroundColor: theme.colors.background }} elevated={0} mode="center-aligned">
+                    <Avatar.Image size={45} source={require('assets/img_perfil1.jpg')}
+                        onTouchEnd={() => console.log('Hooola')} />
                     <Appbar.Content title="Predeterminado" subtitle={'Subtitle'} />
                     <Appbar.Action icon="plus" onPress={() => { }} />
-                </Appbar.Header>
-                <View style={{ alignItems: 'center' }}>
+                </Appbar.Header> */}
+                {/* <View style={{ alignItems: 'center' }}>
                     <SegmentedButtons
                         buttons={[
                             {
@@ -47,7 +47,7 @@ const Main = ({ navigation, extraData: { DarkTheme, changeTheme } }) => {
                             },
                         ]}
                     />
-                </View>
+                </View> */}
                 <Switch value={DarkTheme} onValueChange={onToggleSwitch} />
                 <Button mode="contained" onPress={Logout}>
                     Logout

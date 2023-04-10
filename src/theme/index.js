@@ -23,7 +23,7 @@ export const themeLigth = {
         onError: 'rgb(255, 255, 255)',
         errorContainer: 'rgb(255, 218, 214)',
         onErrorContainer: 'rgb(65, 0, 2)',
-        background: 'rgb(250, 250, 250)',
+        background: 'rgb(245, 245, 245)',
         onBackground: 'rgb(27, 27, 31)',
         surface: 'rgb(255, 251, 255)',
         onSurface: 'rgb(27, 27, 31)',
